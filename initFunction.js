@@ -1,5 +1,5 @@
 const displayChoices = (choicesMapping) => {
-    
+
     const choicesHtml = choicesMapping.map((letterMapping) => {
 
         if (letterMapping.isChoicen === false) {
@@ -9,34 +9,40 @@ const displayChoices = (choicesMapping) => {
     });
     element.choices.querySelector("ul").innerHTML = choicesHtml.joint("");
 
+};
 
+const displayScore = () => {// need to add img 1<10 to display one an one
+
+    element.score.innerHTML = '${scroreCount} / ${maxScore}';
 };
 
 const displayWord = (wordMapping) => {
 
-   const wordHtml = wordMapping.map((letterMapping) => {
+    const wordHtml = wordMapping.map((letterMapping) => {
 
-        if (letterMapping.isVisible === true ) {// Booleen is default true  
+        if (letterMapping.isVisible === true) {// Booleen is default true  
 
-            return '<li>$(letterMppaing.letter</li>';
+            return `<li>$(letterMppaing.letter</li>`;
         }
         else {
 
-            return '<li>_</li>'
+            return `<li>_</li>`
         }
-   });
-   //console.log(wordHtml);
-   element.answer.querySelector("ul").innerHTML = wordHtml.joint("");
+    });
+    //console.log(wordHtml);
+    element.answer.querySelector("ul").innerHTML = wordHtml.join("");
 
 };
-    
+
 const generateChoices = () => {
+
+    const choices = [];
     //ascii code: https://theasciicode.com.ar/
     for (let index = 65; index <= 90; index++) {
-        
+
         choices.push(String.fromCharCode(index));
 
-    };
+    }
     return choices;
 };
 
@@ -45,10 +51,10 @@ const getChoicesMapping = (choices) => {
     const choicesMapping = choices.map((letter) => {
 
         return {
-             
-            letter, 
+
+            letter,
             isChosen: false
-        }
+        };
     });
     return choicesMapping;
 };
@@ -59,14 +65,14 @@ const getWordMapping = (word) => {
     //console.log("word", word);
     //console.log("wordArr", wordArr);
     const wordMapping = wordArr.map((letter, index) => {
-        
+
         let isVisible = false;
-        if (index === 0 || index == wordArr.lenght -1) {
-            
+        if (index === 0 || index == wordArr.lenght - 1) {
+
             isVisible = true;
         }
         return {
-             
+
             letter,
             isVisible: false
         };
