@@ -1,0 +1,11 @@
+#choices li, #answer li{
+
+    display: inline-block;
+    margin: 10px;
+
+}
+/*visibilty of user click*/
+.dislabled { 
+
+    opacity: 0.3;
+}
