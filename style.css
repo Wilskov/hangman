@@ -1,11 +1,16 @@
-#choices li, #answer li{
+#choices li {
 
+    border: solid 2px gold;
+    border-radius: 40%;
+}
+
+#choices li, #answer li {
+   
     display: inline-block;
     margin: 10px;
-
 }
 /*visibilty of user click*/
 .disabled { 
-
+    
     opacity: 0.3;
 }

@@ -19,7 +19,7 @@ let word = "";
 let wordMapping = [];
 let choicesMapping = [];
 let scoreCount = 0;
-let maxScore = 10;// number of image to lose 
+let maxScore = 8;// number of image to lose 
 
 const init = () => {
     //console.log('>> #init');

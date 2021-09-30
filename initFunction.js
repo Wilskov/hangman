@@ -52,7 +52,9 @@ const checkLetter = (letter) => {
 
             scoreCount++
             displayScore();
+            //document.appendChild(img ==)
         }
+
 
         if (scoreCount === maxScore) {
 
