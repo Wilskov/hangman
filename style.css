@@ -1,7 +1,7 @@
 #choices li {
 
-    border: solid 2px gold;
-    border-radius: 40%;
+    border: solid 5px gold;
+    border-radius: 30%;
 }
 
 #choices li, #answer li {
@@ -9,8 +9,38 @@
     display: inline-block;
     margin: 10px;
 }
+
 /*visibilty of user click*/
 .disabled { 
     
     opacity: 0.3;
 }
+
+#warrper {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+
+#choices, #answer {
+    
+    display: flex;
+    justify-content: center;
+    background-color: hotpink;
+    cursor: context-menu;
+ 
+}
+
+#score {
+
+    display: flex;
+    justify-content: center;
+
+    height: 75vh;
+   
+
+}
+
+

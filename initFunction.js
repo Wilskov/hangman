@@ -16,13 +16,13 @@ const checkLetter = (letter) => {
 
     if (hasAlreadyBeenChosen === false) {
 
-        //console.log(letter);
+        
         let isLetterInWord = false;
         let isAllLetterFound = true;
-        //console.log("isLetterInWord  before loop", isLetterInWord);
+       
         wordMapping.forEach((letterMapping) => {
 
-            //console.log("letterMapping.letter", letterMapping.letter);
+          
             if (letterMapping.letter === letter) {
 
                 letterMapping.isVisible = true;
@@ -52,7 +52,7 @@ const checkLetter = (letter) => {
 
             scoreCount++
             displayScore();
-            //document.appendChild(img ==)
+           
         }
 
 
@@ -65,15 +65,19 @@ const checkLetter = (letter) => {
 
             winGame();
         }
-        //console.log("isLetterWord after loop", isLetterInWord);
+       
     }
 
 };
 
 const endGame = () => {
 
-    document.querySelector("body").style.backgroundColor = "red";//
+    wordMapping.forEach(w => w.isVisible = true);
+    displayWord(wordMapping);
+    document.querySelector("body").style.backgroundColor = "red";
     element.choices.innerHTML = `<h1>You die</h1>`;
+    
+    
 
 };
 
@@ -99,12 +103,12 @@ const displayChoices = (choicesMapping) => {
 
 };
 
-const displayScore = () => {// need to add img 1<10 to display one an one
+const displayScore = () => {// need to add img 1<8 to display one an one
 
-    element.score.innerHTML = `${scoreCount} / ${maxScore}`;//y must call all fonction to cant listen easly 'element'
+    element.score.innerHTML = `<img src= "img/00${scoreCount}.png" alt= "hangman" />`; //y must call all fonction to cant listen easly 'element'
 };
 
-const displayWord = (wordMapping) => { //y must call all fonction to cant listen easly 'element'
+const displayWord = (wordMapping) => { // must call all fonction to cant listen easly 'element'
 
     const wordHtml = wordMapping.map((letterMapping) => {
 
@@ -117,7 +121,7 @@ const displayWord = (wordMapping) => { //y must call all fonction to cant listen
             return `<li>_</li>`
         }
     });
-    //console.log(wordHtml);
+   
     element.answer.querySelector("ul").innerHTML = wordHtml.join("");
 
 };
@@ -150,8 +154,7 @@ const getChoicesMapping = (choices) => {
 const getWordMapping = (word) => {
 
     const wordArr = word.split("");
-    //console.log("word", word);
-    //console.log("wordArr", wordArr);
+    
     const wordMapping = wordArr.map((letter, index) => {
 
         let isVisible = false;
